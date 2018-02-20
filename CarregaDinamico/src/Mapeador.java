@@ -32,4 +32,10 @@ public class Mapeador {
 		return mapa.get(interf);
 	}
 	
+	@SuppressWarnings("deprecation")
+	public Object getInstancia(Class<?> interf) throws Exception {
+		Class<?> impl = mapa.get(interf);
+		return impl.newInstance();
+	}
+	
 }
